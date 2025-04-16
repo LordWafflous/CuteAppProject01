@@ -3,16 +3,20 @@ const { truncate } = require('original-fs');
 
 const createWindow = () => {
   const win = new BrowserWindow({ //this is the function that creates the window, i am assuming it will be filled with index.html s content
-    width: 250,
-    height: 250,
+    x:0,
+    y:0,
+    width: 250, //250 for teto
+    height: 250, //250 for teto
     transparent: true,
-    frame: true,
+    frame: false,
     alwaysOnTop: true,
     hasShadow: false,
     resizable: true,
     skipTaskbar: true,
   });
 
+  win.setAspectRatio(1);
+  //win.setAspectRatio(498/325);
   win.loadFile('index.html')
 }
 
